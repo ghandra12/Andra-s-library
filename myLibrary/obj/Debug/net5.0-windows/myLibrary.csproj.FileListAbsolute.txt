@@ -26,7 +26,6 @@ E:\Andra's library\myLibrary\bin\Debug\net5.0-windows\myLibrary.runtimeconfig.de
 E:\Andra's library\myLibrary\bin\Debug\net5.0-windows\myLibrary.dll
 E:\Andra's library\myLibrary\bin\Debug\net5.0-windows\ref\myLibrary.dll
 E:\Andra's library\myLibrary\bin\Debug\net5.0-windows\myLibrary.pdb
-E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\myLibrary.csproj.AssemblyReference.cache
 E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\MainWindow.g.cs
 E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\App.g.cs
 E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\myLibrary_MarkupCompile.cache
@@ -41,3 +40,5 @@ E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\myLibrary.dll
 E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\ref\myLibrary.dll
 E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\myLibrary.pdb
 E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\myLibrary.genruntimeconfig.cache
+E:\Andra's library\myLibrary\obj\Debug\net5.0-windows\myLibrary.csproj.AssemblyReference.cache
+E:\Andra's library\myLibrary\bin\Debug\net5.0-windows\myLibrary.dll.config

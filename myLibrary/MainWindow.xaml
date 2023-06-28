@@ -5,10 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="Andra's Library" Height="550" Width="1000" VerticalAlignment="Top">
-    <Grid x:Name="Andra_s_Library" Width="1000" >
-        <Grid.Background>
-            <ImageBrush ImageSource="/myLibrary;component/Images/Background.png"/>
-        </Grid.Background>
+        Title="Andra's Library" Height="500" Width="800" VerticalAlignment="Top" SizeToContent="WidthAndHeight">
+    <Window.Background>
+        <ImageBrush ImageSource="/myLibrary;component/Images/bg1.jpg"/>
+
+    </Window.Background>
+    <Grid x:Name="Andra_s_Library" Width="800" Height="500">
+        <Label x:Name="idEmail" Content="email:" HorizontalAlignment="Left" Margin="394,166,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontWeight="Normal" FontSize="15" RenderTransformOrigin="0.087,0.523" Foreground="#FF575757" Height="29" Width="62"/>
+        <TextBlock x:Name="txtBoxEmail" HorizontalAlignment="Left" Margin="454,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="261" Text="" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.Background>
+                <SolidColorBrush Color="White" Opacity="0.3"/>
+            </TextBlock.Background>
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.233"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Label x:Name="idPassword" Content="password:" HorizontalAlignment="Left" Margin="368,267,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="15" RenderTransformOrigin="0.126,0.728" Foreground="#FF575757" Height="29" Width="97"/>
+        <TextBlock x:Name="txtBoxPassword" HorizontalAlignment="Left" Margin="454,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="261">
+            <TextBlock.Background>
+                <SolidColorBrush Color="White" Opacity="0.3"/>
+            </TextBlock.Background>
+        </TextBlock>
+        <Button x:Name="btnLogIn" Content="Log in" HorizontalAlignment="Left" Margin="544,332,0,0" VerticalAlignment="Top" Height="31" Width="81" Click="Button_Click" FontFamily="Segoe UI" BorderThickness="0,0,0,0" BorderBrush="White" Foreground="#FF575757" Padding="1,1,1,1">
+            <Button.Background>
+                <SolidColorBrush Color="White" Opacity="0.3"/>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="106" Margin="368,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="396" Foreground="#FF404040" FontSize="15"><Run Text="Never trust anyone who has not brought a book with them."/><LineBreak/><Run Text="— Lemony Snicket"/><LineBreak/><Run/><LineBreak/><Run Text="Welcome back! Please log in with your library staff account or reader account."/></TextBlock>
+
     </Grid>
+
+
 </Window>
