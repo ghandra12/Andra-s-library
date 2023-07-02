@@ -49,5 +49,27 @@ namespace myLibrary.myLibraryClasses
 
             return account;
         }
+        public void AddNewReaderData(string email, string password,string telephone,string name, bool admin)
+        {
+            string myconnstring = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
+           
+
+            string Command = $"INSERT INTO dbo.accounts ( [Email], [Password], [IsAdministrator],[Name],[Telephone])VALUES('{email}', '{password}', '{admin}','{name}','{telephone}'); ";
+            using (SqlConnection mConnection = new SqlConnection(myconnstring))
+            {
+                mConnection.Open();
+                using (SqlCommand cmd = new SqlCommand(Command, mConnection))
+                {
+
+                   cmd.ExecuteReader() ;
+
+                }
+
+                mConnection.Close();
+            }
+
+            
+        }
     }
 }
