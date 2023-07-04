@@ -49,11 +49,9 @@ namespace myLibrary.myLibraryClasses
 
             return account;
         }
-        public void AddNewReaderData(string email, string password,string telephone,string name, bool admin)
+        public void AddNewReaderData(string email, string password, string telephone, string name, bool admin)
         {
             string myconnstring = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
-           
 
             string Command = $"INSERT INTO dbo.accounts ( [Email], [Password], [IsAdministrator],[Name],[Telephone])VALUES('{email}', '{password}', '{admin}','{name}','{telephone}'); ";
             using (SqlConnection mConnection = new SqlConnection(myconnstring))
@@ -62,14 +60,64 @@ namespace myLibrary.myLibraryClasses
                 using (SqlCommand cmd = new SqlCommand(Command, mConnection))
                 {
 
-                   cmd.ExecuteReader() ;
+                    cmd.ExecuteReader();
+
+                }
+
+                mConnection.Close();
+            }
+        }
+        public List<accountsClass> GetAllUsers()
+        {
+            string myconnstring = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
+            List<accountsClass> accounts = new List<accountsClass>();
+
+            string Command = "SELECT [idAccount], [Name], [Email] FROM dbo.accounts where Email <> 'admin'";
+            using (SqlConnection mConnection = new SqlConnection(myconnstring))
+            {
+                mConnection.Open();
+                using (SqlCommand cmd = new SqlCommand(Command, mConnection))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var account = new accountsClass();
+                            account.IdAccount = (int)reader[0];
+                            account.Name = (string)reader[1];
+                            account.Email = (string)reader[2];
+                           
+                            accounts.Add(account);
+                        }
+                    }
+                }
+
+                mConnection.Close();
+
+            }
+            return accounts;
+        }
+        public void DeleteUser()
+        {
+            var x = this.IdAccount;
+
+            string myconnstring = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+
+            string Command = $"DELETE FROM dbo.accounts WHERE idAccount='{x}';" ;
+            using (SqlConnection mConnection = new SqlConnection(myconnstring))
+            {
+                mConnection.Open();
+                using (SqlCommand cmd = new SqlCommand(Command, mConnection))
+                {
+
+                    cmd.ExecuteReader();
 
                 }
 
                 mConnection.Close();
             }
 
-            
         }
     }
 }

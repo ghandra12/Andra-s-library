@@ -30,6 +30,21 @@ namespace myLibrary
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
 
+            if (sender.Equals(AddReader))
+            {
+                AddReaderWindow addwindowreader = new AddReaderWindow();
+                Visibility = Visibility.Hidden;
+                addwindowreader.Show();
+            }
+            else
+                if(sender.Equals(DeleteReader))
+            {
+                DeleteReaderWindow deletereaderwindow = new DeleteReaderWindow();
+                Visibility = Visibility.Hidden;
+                deletereaderwindow.Show();
+            }
+          
+               
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
@@ -50,14 +65,14 @@ namespace myLibrary
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            if (sender.Equals(AddReaderBtn))
+            if (sender.Equals(LogOutBtn))
             {
-                AddReaderWindow addwindowreader = new AddReaderWindow();
+                LoginWindow loginwindow = new LoginWindow();
                 Visibility = Visibility.Hidden;
-                addwindowreader.Show();
+                loginwindow.Show();
             }
-                
-         
+            
+
         }
     }
 

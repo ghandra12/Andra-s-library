@@ -1,6 +1,8 @@
-﻿using myLibrary.myLibraryClasses;
+﻿using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,38 +13,43 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using OpenQA.Selenium.Remote;
+using OpenQA.Selenium;
+using myLibrary.myLibraryClasses;
 
 namespace myLibrary.Windows
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for DeleteReaderWindow.xaml
     /// </summary>
-    public partial class AddReaderWindow : Window
+    public partial class DeleteReaderWindow : Window
     {
         accountsClass account = new accountsClass();
-        public AddReaderWindow()
+        public DeleteReaderWindow()
         {
             InitializeComponent();
+            var accounts = account.GetAllUsers();
+            usersDropdown.ItemsSource = accounts;
+            usersDropdown.DisplayMemberPath = "Name";
+            usersDropdown.SelectedValuePath = "IdAccount";
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string email = addEmail.Text;
-            string password = addPass.Password;
-            string telephone = addTel.Text;
-            string name = addName.Text;
-            bool admin = check.IsChecked.Value;
-
-            account.AddNewReaderData(email, password,telephone,name,admin);
-
-            if (sender.Equals(backButton))
+            if (sender.Equals(backButton2))
             {
                 AdministratorWindow administratorWindow = new AdministratorWindow();
                 Visibility = Visibility.Hidden;
                 administratorWindow.Show();
             }
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            accountsClass userToDelete = (accountsClass)usersDropdown.SelectedItem;
+            userToDelete.DeleteUser();
+        }
+
     }
 }

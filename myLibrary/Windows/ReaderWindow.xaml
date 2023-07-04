@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="ReaderWindow" Height="450" Width="800">
-    <Grid>
+        WindowState="Maximized"
+        WindowStyle="None"
+        Title="ReaderWindow" Height="1080" Width="1920">
+    <Grid Height="1080" Width="1920">
         <TextBox HorizontalAlignment="Left" Margin="275,198,0,0" Text="Reader" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
 
     </Grid>

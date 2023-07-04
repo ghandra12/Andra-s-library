@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary.Windows"
         mc:Ignorable="d"
-        Title="AddReaderWindow" Height="450" Width="800">
+        WindowState="Maximized"
+        WindowStyle="None"
+        Title="AddReaderWindow" Height="1080" Width="1920">
     <Window.Background>
         <ImageBrush ImageSource="/myLibrary;component/Images/bgadmin.jpg"/>
 
@@ -30,8 +32,8 @@
         <PasswordBox x:Name="addPass" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="204,263,0,0" VerticalAlignment="Top" Width="213"/>
         <Label Content="Password:" Grid.Column="1" HorizontalAlignment="Left" Margin="130,263,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.39,0.109"/>
         <Button x:Name="createBtn" Content="Create account" Grid.Column="1" HorizontalAlignment="Left" Margin="310,334,0,0" VerticalAlignment="Top" Height="37" Width="108" Background="#FFFF9898" Click="Button_Click"/>
-        <Button x:Name="backButton" Content="&lt;&lt;&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="#FFFF9F9F" Height="25" Width="47"/>
+        <Button x:Name="backButton" Content="&lt;&lt;&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="#FFFF9F9F" Height="25" Width="47" Click="Button_Click"/>
         <CheckBox x:Name="check" Content="Administrator" Grid.Column="1" HorizontalAlignment="Left" Margin="162,346,0,0" VerticalAlignment="Top" Height="23" Width="131" IsChecked="{Binding IsChecked}"/>
-
+     
     </Grid>
 </Window>

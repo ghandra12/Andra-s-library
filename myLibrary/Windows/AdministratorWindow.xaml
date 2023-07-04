@@ -5,53 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="AdministratorWindow" Height="450" Width="800">
+        WindowState="Maximized"
+        WindowStyle="None"
+        Title="AdministratorWindow" Height="1080" Width="1920">
     <Window.Background>
         <ImageBrush ImageSource="/myLibrary;component/Images/bgadmin.jpg"/>
 
     </Window.Background>
 
-    <Grid>
+    <Grid Margin="0,10,0,28">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="253*"/>
             <ColumnDefinition Width="547*"/>
 
         </Grid.ColumnDefinitions>
-        <Border
-            Grid.Column="0" Margin="0,0,26,0">
-            <Border.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="LightPink"></GradientStop>
-                </LinearGradientBrush>
-            </Border.Background>
-        </Border>
-        <Menu HorizontalContentAlignment="Center" Margin="10,101,26,259"  Background="LightPink">
 
-            <MenuItem x:Name="AddBookMenu" Header="                    Add a book" Height="52"   Width="201" Click="MenuItem_Click_2" BorderBrush="{x:Null}" Background="#FFFFD3D3" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
-                <MenuItem.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.265"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </MenuItem.RenderTransform>
 
-                <MenuItem Header="Book Type" BorderBrush="#FF707070" Background="#FFFFD3D3">
-                    <MenuItem Header="Fiction" BorderBrush="#FF707070" Background="#FFFFD3D3"></MenuItem>
-                    <MenuItem Header="History" BorderBrush="#FF707070" Background="#FFFFD3D3"></MenuItem>
-                    <MenuItem Header="Romance" BorderBrush="#FF707070" Background="#FFFFD3D3"></MenuItem>
-                </MenuItem>
-            </MenuItem>
 
-        </Menu>
-        <Button x:Name="AddReaderBtn" Content="Add new reader account!" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Height="49" Width="200" RenderTransformOrigin="0.447,-0.424" Visibility="Visible" OpacityMask="Black" Background="#FFFFD3D3" Click="Button_Click" BorderBrush="{x:Null}"/>
-        <Button x:Name="ChangeBtn" Content="Change disponibility" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Height="49" Width="200" RenderTransformOrigin="0.447,-0.424" Visibility="Visible" OpacityMask="Black" Background="#FFFFD3D3" Click="Button_Click" BorderBrush="{x:Null}"/>
-        <Button x:Name="RaportBtn" Content="Monthly raport" HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top" Height="49" Width="200" RenderTransformOrigin="0.447,-0.424" Visibility="Visible" OpacityMask="Black" Background="#FFFFD3D3" Click="Button_Click" BorderBrush="{x:Null}"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,336,0,10" TextWrapping="Wrap" Width="459" FontSize="20">
+        <Button x:Name="ChangeBtn" Content="Change disponibility" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Height="76" Width="517" RenderTransformOrigin="0.447,-0.424" Visibility="Visible" OpacityMask="Black" Background="#FFFFD3D3" Click="Button_Click" BorderBrush="{x:Null}"/>
+        <Button x:Name="RaportBtn" Content="Monthly raport" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top" Height="75" Width="517" RenderTransformOrigin="0.447,-0.424" Visibility="Visible" OpacityMask="Black" Background="#FFFFD3D3" Click="Button_Click" BorderBrush="{x:Null}"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="353,717,0,0" TextWrapping="Wrap" Width="677" FontSize="20">
             <TextBlock.Foreground>
                 <SolidColorBrush Color="#FFE45858" Opacity="0.3"/>
             </TextBlock.Foreground><Run Text="Thank you for being a great addition to our team!"/><LineBreak/><Run Text="Don't forget about your free coffee :)"/></TextBlock>
+        <Menu  Margin="-1,415,960,219" HorizontalContentAlignment="Left" Grid.ColumnSpan="2">
+            <Menu.Background>
+                <SolidColorBrush Color="#FFC34C5E" Opacity="0"/>
+            </Menu.Background>
+            <MenuItem Header="                                                                    Reader" Height="79"   Width="490" Click="MenuItem_Click_2" BorderBrush="{x:Null}" Background="#FFFFD3D3" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
+                <MenuItem x:Name="AddReader" Header="Add new reader" Click="MenuItem_Click" ></MenuItem>
+                <MenuItem x:Name="DeleteReader" Header="Delete a reader" Click="MenuItem_Click" ></MenuItem>
+            </MenuItem>
+
+        </Menu>
+        <Button x:Name="AddBookBtn" Content="Books" HorizontalAlignment="Center" Margin="0,118,0,0" VerticalAlignment="Top" Height="74" Width="517" RenderTransformOrigin="0.447,-0.424" Visibility="Visible" OpacityMask="Black" Background="#FFFFD3D3" Click="Button_Click" BorderBrush="{x:Null}"/>
+        <Button x:Name="LogOutBtn" Content="Log Out" HorizontalAlignment="Left" Height="48" Margin="45,38,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click" Background="#FFFFD3D3"  BorderBrush="{x:Null}" RenderTransformOrigin="0.536,-3.596"/>
 
     </Grid>
 </Window>

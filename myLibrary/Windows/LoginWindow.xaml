@@ -5,23 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="Andra's Library" Height="500" Width="800" VerticalAlignment="Top" SizeToContent="WidthAndHeight">
+        WindowState="Maximized"
+        WindowStyle="None"
+        Title="Andra's Library" Height="1080" Width="1920" VerticalAlignment="Top" SizeToContent="WidthAndHeight">
     <Window.Background>
         <ImageBrush ImageSource="/myLibrary;component/Images/bg1.jpg"/>
 
     </Window.Background>
-    <Grid x:Name="Andra_s_Library" Width="800" Height="500">
-        <Label x:Name="idEmail" Content="email:" HorizontalAlignment="Left" Margin="394,221,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontWeight="Normal" FontSize="15" RenderTransformOrigin="0.087,0.523" Foreground="#FF575757" Height="29" Width="62"/>
-        <Label x:Name="idPassword" Content="password:" HorizontalAlignment="Left" Margin="368,267,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="15" RenderTransformOrigin="0.126,0.728" Foreground="#FF575757" Height="29" Width="97"/>
-        <Button x:Name="btnLogIn" Content="Log in" HorizontalAlignment="Left" Margin="544,332,0,0" VerticalAlignment="Top" Height="31" Width="81" Click="Button_Click" FontFamily="Segoe UI" BorderThickness="0,0,0,0" BorderBrush="White" Foreground="#FF575757" Padding="1,1,1,1">
+    <Grid x:Name="Andra_s_Library" Width="1920" Height="1080">
+        <Label x:Name="idEmail" Content="email:" HorizontalAlignment="Left" Margin="1023,333,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontWeight="Normal" FontSize="15" RenderTransformOrigin="0.087,0.523" Foreground="#FF575757" Height="29" Width="62"/>
+        <Label x:Name="idPassword" Content="password:" HorizontalAlignment="Left" Margin="997,379,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="15" RenderTransformOrigin="0.126,0.728" Foreground="#FF575757" Height="29" Width="97"/>
+        <Button x:Name="btnLogIn" Content="Log in" HorizontalAlignment="Left" Margin="1144,448,0,0" VerticalAlignment="Top" Height="31" Width="82" Click="Button_Click" FontFamily="Segoe UI" BorderThickness="0,0,0,0" BorderBrush="White" Foreground="#FF575757" Padding="1,1,1,1">
             <Button.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="106" Margin="368,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="396" Foreground="#FF404040" FontSize="15"><Run Text="Never trust anyone who has not brought a book with them."/><LineBreak/><Run Text="— Lemony Snicket"/><LineBreak/><Run/><LineBreak/><Run Text="Welcome back! Please log in with your library staff account or reader account."/></TextBlock>
-        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Margin="454,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" Height="24" />
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="454,270,0,0" VerticalAlignment="Top" Width="261" Height="24"/>
-
+        <TextBlock HorizontalAlignment="Left" Height="108" Margin="894,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="540" Foreground="#FF404040" FontSize="15"><Run Text="Never trust anyone who has not brought a book with them."/><LineBreak/><Run Text="— Lemony Snicket"/><LineBreak/><Run/><LineBreak/><Run Text="Welcome back! Please log in with your library staff account or reader account."/></TextBlock>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Margin="1083,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" Height="24" />
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="1083,382,0,0" VerticalAlignment="Top" Width="261" Height="24"/>
+   
     </Grid>
 
 
