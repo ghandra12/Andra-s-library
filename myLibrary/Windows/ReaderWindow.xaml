@@ -7,9 +7,27 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         WindowStyle="None"
-        Title="ReaderWindow" Height="1080" Width="1920">
-    <Grid Height="1080" Width="1920">
-        <TextBox HorizontalAlignment="Left" Margin="275,198,0,0" Text="Reader" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        Title="ReaderWindow" Height="1146" Width="1923">
+    <Grid Margin="374,79,35,33">
+
+        <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="5" HorizontalAlignment="Stretch" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image x:Name="img" Source="{Binding Photo}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="UniformToFill" Height="150" Width="100" />
+                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="All Books" HorizontalAlignment="Left" Height="83" Margin="-328,168,0,0" VerticalAlignment="Top" Width="256" Background="#FFFBFDD8"/>
+        <Button Content="My Books" HorizontalAlignment="Left" Height="83" Margin="-328,277,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB"/>
+        <Button x:Name="LogOutBtn" Content="Log Out" HorizontalAlignment="Left" Height="40" Margin="-148,430,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click" Background="#FFFFD3D3"  BorderBrush="{x:Null}" RenderTransformOrigin="0.536,-3.596"/>
 
     </Grid>
 </Window>

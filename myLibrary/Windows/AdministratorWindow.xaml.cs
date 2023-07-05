@@ -71,7 +71,13 @@ namespace myLibrary
                 Visibility = Visibility.Hidden;
                 loginwindow.Show();
             }
-            
+            else
+                if (sender.Equals(AddBookBtn))
+            {
+                AddBooksWindow addbookwnd = new AddBooksWindow();
+                Visibility = Visibility.Hidden;
+                addbookwnd.Show();
+            }
 
         }
     }
