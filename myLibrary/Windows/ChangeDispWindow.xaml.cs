@@ -11,40 +11,41 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace myLibrary.Windows
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for ChangeDispWindow.xaml
     /// </summary>
-    public partial class AddReaderWindow : Window
+    public partial class ChangeDispWindow : Window
     {
-        accountsClass account = new accountsClass();
-        public AddReaderWindow()
-        {
-            InitializeComponent();
+        booksClass book = new booksClass();
+        public ChangeDispWindow()
+        { InitializeComponent();
+            var books = book.GetBooks();
+            books = books.Where(b => !b.IdAccount.HasValue).ToList();
+            booksDropdown.ItemsSource = books;
+            booksDropdown.DisplayMemberPath = "Title";
+            booksDropdown.SelectedValuePath = "IdBook";
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (sender.Equals(createBtn))
-            {
-                string email = addEmail.Text;
-                string password = addPass.Password;
-                string telephone = addTel.Text;
-                string name = addName.Text;
-                bool admin = check.IsChecked.Value;
-
-                account.AddNewReaderData(email, password, telephone, name, admin);
-            }
-            if (sender.Equals(backButton))
+            if (sender.Equals(backButton2))
             {
                 AdministratorWindow administratorWindow = new AdministratorWindow();
                 Visibility = Visibility.Hidden;
                 administratorWindow.Show();
             }
         }
+
+        private void Change_Click(object sender, RoutedEventArgs e)
+        {
+           
+            booksClass bookToChange = (booksClass)booksDropdown.SelectedItem;
+            bookToChange.ChangeBookDisponibility();
+        }
     }
+   
+
 }

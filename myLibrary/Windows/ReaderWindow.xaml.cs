@@ -18,16 +18,20 @@ namespace myLibrary
 {
     /// <summary>
     /// Interaction logic for ReaderWindow.xaml
-    /// </summary>
+    /// </summary>`
     public partial class ReaderWindow : Window
     {
+        public int idReader;
         private booksClass book = new booksClass();
         private List<booksClass> books = new List<booksClass>();
+       
+       
+
         public ReaderWindow()
         {
             InitializeComponent();
             books = book.GetBooks();
-            this.TvBox.ItemsSource = books;
+            this.booksList.ItemsSource = books;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -42,6 +46,40 @@ namespace myLibrary
                 Visibility = Visibility.Hidden;
                 loginwindow.Show();
             }
+            else
+                if (sender.Equals(mybooks))
+            {
+               books= book.GetMyBooks(this.idReader);
+               this.booksList.ItemsSource = books;
+            }
+            else
+                if (sender.Equals(allbooks))
+            {
+               books= book.GetBooks();
+               this.booksList.ItemsSource = books;
+            }
+        }
+        private void Borrow_Click(object sender, RoutedEventArgs e)
+        {
+        
+            if (book.CountBooks(this.idReader))
+            {
+                Button button = sender as Button;
+                booksClass book = button.DataContext as booksClass;
+                book.UpdateBook(this.idReader, book.IdBook);
+                books = book.GetBooks();
+                this.booksList.ItemsSource = books;
+            }
+          
+        }
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            booksClass book = button.DataContext as booksClass;
+            book.UpdateBookReturn( book.IdBook);
+          
+            books = book.GetMyBooks(this.idReader);
+            this.booksList.ItemsSource = books;
         }
     }
 }

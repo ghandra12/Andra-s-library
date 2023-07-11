@@ -8,9 +8,13 @@
         WindowState="Maximized"
         WindowStyle="None"
         Title="ReaderWindow" Height="1146" Width="1923">
+    <Window.Background>
+        <ImageBrush ImageSource="/myLibrary;component/Images/bgreader.jpg"/>
+
+    </Window.Background>
     <Grid Margin="374,79,35,33">
 
-        <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        <ListView x:Name="booksList" HorizontalAlignment="Stretch" VerticalAlignment="Top">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="5" HorizontalAlignment="Stretch" />
@@ -21,13 +25,20 @@
                     <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <Image x:Name="img" Source="{Binding Photo}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="UniformToFill" Height="150" Width="100" />
                         <TextBlock Text="{Binding Title}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                        <TextBlock Text="{Binding Author}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                        <TextBlock Text="{Binding Type}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                        <TextBlock Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                        <Button x:Name="borrowBtn" Visibility="{Binding BorrowButtonVisiblity}" Content="Borrow" Click="Borrow_Click" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="#FFB3C6EB"></Button>
+                        <Button x:Name="returnBtn" Visibility="{Binding ReturnButtonVisiblity}" Content="Return" Click="Return_Click" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="#FFFFF1AF"></Button>
+                        <TextBlock Text="INDISPONIBIL!" Visibility="{Binding IsDisponible}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Content="All Books" HorizontalAlignment="Left" Height="83" Margin="-328,168,0,0" VerticalAlignment="Top" Width="256" Background="#FFFBFDD8"/>
-        <Button Content="My Books" HorizontalAlignment="Left" Height="83" Margin="-328,277,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB"/>
-        <Button x:Name="LogOutBtn" Content="Log Out" HorizontalAlignment="Left" Height="40" Margin="-148,430,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click" Background="#FFFFD3D3"  BorderBrush="{x:Null}" RenderTransformOrigin="0.536,-3.596"/>
+        <Button x:Name="allbooks" Content="All Books" HorizontalAlignment="Left" Height="83" Margin="-328,23,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB" Click="Button_Click"/>
+        <Button x:Name="mybooks" Content="My Books" HorizontalAlignment="Left" Height="83" Margin="-328,125,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB" Click="Button_Click"/>
+        <Button x:Name="LogOutBtn" Content="Log Out" HorizontalAlignment="Left" Height="40" Margin="-328,-62,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click" Background="#FF548ABD"  BorderBrush="{x:Null}" RenderTransformOrigin="0.536,-3.596"/>
+        <Button Content="Around the Library" HorizontalAlignment="Left" Height="83" Margin="-328,235,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB" />
 
     </Grid>
 </Window>

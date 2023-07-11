@@ -48,6 +48,7 @@ namespace myLibrary
                 } else
                 {
                     ReaderWindow readerWindow = new ReaderWindow();
+                    readerWindow.idReader = user.IdAccount;
                     Visibility = Visibility.Hidden;
                     readerWindow.Show();
                 }

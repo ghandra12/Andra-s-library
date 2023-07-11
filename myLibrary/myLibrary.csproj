@@ -10,6 +10,7 @@
     <None Remove="Images\bg1.jpg" />
     <None Remove="Images\bg3.jpg" />
     <None Remove="Images\bgadmin.jpg" />
+    <None Remove="Images\bgreader.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\bgadmin.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\bgreader.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

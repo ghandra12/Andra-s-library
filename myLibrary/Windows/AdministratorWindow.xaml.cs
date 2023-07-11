@@ -43,6 +43,7 @@ namespace myLibrary
                 Visibility = Visibility.Hidden;
                 deletereaderwindow.Show();
             }
+       
           
                
         }
@@ -77,6 +78,12 @@ namespace myLibrary
                 AddBooksWindow addbookwnd = new AddBooksWindow();
                 Visibility = Visibility.Hidden;
                 addbookwnd.Show();
+            }
+            if (sender.Equals(ChangeBtn))
+            {
+                ChangeDispWindow chdisp = new ChangeDispWindow();
+                Visibility = Visibility.Hidden;
+                chdisp.Show();
             }
 
         }
