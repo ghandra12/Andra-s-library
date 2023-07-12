@@ -44,11 +44,13 @@ namespace myLibrary
                 {
                     AdministratorWindow administratorWindow = new AdministratorWindow();
                     Visibility = Visibility.Hidden;
+                    administratorWindow.IsAdministrator = user.IsAdministrator;
                     administratorWindow.Show();
                 } else
                 {
                     ReaderWindow readerWindow = new ReaderWindow();
                     readerWindow.idReader = user.IdAccount;
+                    readerWindow.IsAdministrator = user.IsAdministrator;
                     Visibility = Visibility.Hidden;
                     readerWindow.Show();
                 }

@@ -24,7 +24,6 @@ namespace myLibrary.Windows
     public partial class AddBooksWindow : Window
     {
         booksClass book = new booksClass();
-        //PRELUARE DATE DIN FORMULAR
 
         public AddBooksWindow()
         {
@@ -69,6 +68,12 @@ namespace myLibrary.Windows
                 AdministratorWindow administratorWindow = new AdministratorWindow();
                 Visibility = Visibility.Hidden;
                 administratorWindow.Show();
+            }
+            if (sender.Equals(deleteBook))
+            {
+                DeleteBookWindow wnd = new DeleteBookWindow();
+                Visibility = Visibility.Hidden;
+                wnd.Show();
             }
         }
 

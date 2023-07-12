@@ -1,4 +1,5 @@
 ﻿using myLibrary.myLibraryClasses;
+using myLibrary.Windows;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,10 +23,9 @@ namespace myLibrary
     public partial class ReaderWindow : Window
     {
         public int idReader;
+        public bool IsAdministrator { get; set; }
         private booksClass book = new booksClass();
         private List<booksClass> books = new List<booksClass>();
-       
-       
 
         public ReaderWindow()
         {
@@ -58,6 +58,14 @@ namespace myLibrary
                books= book.GetBooks();
                this.booksList.ItemsSource = books;
             }
+            if (sender.Equals(RaportBtn))
+            {
+                StatisticsWindow wnd = new StatisticsWindow();
+                Visibility = Visibility.Hidden;
+                wnd.IsAdministrator = this.IsAdministrator;
+                wnd.Show();
+            }
+
         }
         private void Borrow_Click(object sender, RoutedEventArgs e)
         {

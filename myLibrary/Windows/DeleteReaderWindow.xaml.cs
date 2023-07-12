@@ -27,6 +27,7 @@ namespace myLibrary.Windows
     public partial class DeleteReaderWindow : Window
     {
         accountsClass account = new accountsClass();
+       
         public DeleteReaderWindow()
         {
             InitializeComponent();

@@ -22,6 +22,7 @@ namespace myLibrary
     /// </summary>
     public partial class AdministratorWindow : Window
     {
+        public bool IsAdministrator { get; set; }
         public AdministratorWindow()
         {
             InitializeComponent();
@@ -84,6 +85,13 @@ namespace myLibrary
                 ChangeDispWindow chdisp = new ChangeDispWindow();
                 Visibility = Visibility.Hidden;
                 chdisp.Show();
+            }
+            if (sender.Equals(RaportBtn))
+            {
+                StatisticsWindow wnd = new StatisticsWindow();
+                Visibility = Visibility.Hidden;
+                wnd.IsAdministrator = this.IsAdministrator;
+                wnd.Show();
             }
 
         }

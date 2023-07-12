@@ -38,7 +38,7 @@
         <Button x:Name="allbooks" Content="All Books" HorizontalAlignment="Left" Height="83" Margin="-328,23,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB" Click="Button_Click"/>
         <Button x:Name="mybooks" Content="My Books" HorizontalAlignment="Left" Height="83" Margin="-328,125,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB" Click="Button_Click"/>
         <Button x:Name="LogOutBtn" Content="Log Out" HorizontalAlignment="Left" Height="40" Margin="-328,-62,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click" Background="#FF548ABD"  BorderBrush="{x:Null}" RenderTransformOrigin="0.536,-3.596"/>
-        <Button Content="Around the Library" HorizontalAlignment="Left" Height="83" Margin="-328,235,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB" />
+        <Button x:Name="RaportBtn" Content="Around the Library" HorizontalAlignment="Left" Height="83" Margin="-328,235,0,0" VerticalAlignment="Top" Width="256" Background="#FFB3C6EB" Click="Button_Click"/>
 
     </Grid>
 </Window>

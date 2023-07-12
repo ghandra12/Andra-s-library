@@ -18,7 +18,7 @@ namespace myLibrary.myLibraryClasses
         public string Name { get; set; }
         public string Telephone { get; set; }
         public bool IsAdministrator { get; set; }
-
+        public DateTime CreationDate { get; set; }
         public accountsClass GetUserByEmailAndPassword(string email, string password)
         {
             string myconnstring = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
@@ -53,7 +53,7 @@ namespace myLibrary.myLibraryClasses
         {
             string myconnstring = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
-            string Command = $"INSERT INTO dbo.accounts ( [Email], [Password], [IsAdministrator],[Name],[Telephone])VALUES('{email}', '{password}', '{admin}','{name}','{telephone}'); ";
+            string Command = $"INSERT INTO dbo.accounts ( [Email], [Password], [IsAdministrator],[Name],[Telephone],[CreationDate])VALUES('{email}', '{password}', '{admin}','{name}','{telephone}','{DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day}'); ";
             using (SqlConnection mConnection = new SqlConnection(myconnstring))
             {
                 mConnection.Open();
@@ -73,7 +73,7 @@ namespace myLibrary.myLibraryClasses
 
             List<accountsClass> accounts = new List<accountsClass>();
 
-            string Command = "SELECT [idAccount], [Name], [Email] FROM dbo.accounts where Email <> 'admin'";
+            string Command = "SELECT [idAccount], [Name], [Email], [CreationDate] FROM dbo.accounts where IsAdministrator=0";
             using (SqlConnection mConnection = new SqlConnection(myconnstring))
             {
                 mConnection.Open();
@@ -87,7 +87,7 @@ namespace myLibrary.myLibraryClasses
                             account.IdAccount = (int)reader[0];
                             account.Name = (string)reader[1];
                             account.Email = (string)reader[2];
-                           
+                            account.CreationDate = (DateTime)reader[3];
                             accounts.Add(account);
                         }
                     }

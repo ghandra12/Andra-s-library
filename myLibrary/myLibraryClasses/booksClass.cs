@@ -20,7 +20,8 @@ namespace myLibrary.myLibraryClasses
         public BitmapImage Photo { get; set; }
         public int? IdAccount { get; set; }
         public bool Indisponibility { get; set; }
-     
+        public DateTime CreationDate { get; set; }
+
         //Butoanele apar doar daca cartea este disponibila adica Disponibility e marcat ca NULL:
         public string BorrowButtonVisiblity => IdAccount.HasValue || Indisponibility ? "Hidden" : "Visible";
         public string ReturnButtonVisiblity => !IdAccount.HasValue || Indisponibility ? "Hidden" : "Visible";
@@ -29,7 +30,8 @@ namespace myLibrary.myLibraryClasses
         {
             string myconnstring = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 
-            string Command = $"INSERT INTO dbo.books ( [Title], [Author], [Type],[Description],[Photo]) VALUES ('{title}', '{author}', '{type}','{description}', (@photo)); ";
+            string Command = $"INSERT INTO dbo.books ( [Title], [Author], [Type],[Description],[Photo], [CreationDate], [Indisponibility])" +
+                $" VALUES ('{title}', '{author}', '{type}','{description}', (@photo), '{DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day}', '0'); ";
             using (SqlConnection mConnection = new SqlConnection(myconnstring))
             {
                 mConnection.Open();
@@ -68,6 +70,7 @@ namespace myLibrary.myLibraryClasses
                             book.Photo = LoadImage((byte[])reader[5]);
                             book.IdAccount = Convert.IsDBNull(reader[6]) ? null : (int?)reader[6];
                             book.Indisponibility = (bool)reader[7];
+                            book.CreationDate = (DateTime)reader[8];
                             books.Add(book);
                         }
                     }
