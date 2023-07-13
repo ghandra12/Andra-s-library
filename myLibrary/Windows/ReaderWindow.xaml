@@ -27,7 +27,6 @@
                         <TextBlock Text="{Binding Title}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
                         <TextBlock Text="{Binding Author}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
                         <TextBlock Text="{Binding Type}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
-                        <TextBlock Text="{Binding Description}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
                         <Button x:Name="borrowBtn" Visibility="{Binding BorrowButtonVisiblity}" Content="Borrow" Click="Borrow_Click" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="#FFB3C6EB"></Button>
                         <Button x:Name="returnBtn" Visibility="{Binding ReturnButtonVisiblity}" Content="Return" Click="Return_Click" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="#FFFFF1AF"></Button>
                         <TextBlock Text="INDISPONIBIL!" Visibility="{Binding IsDisponible}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>

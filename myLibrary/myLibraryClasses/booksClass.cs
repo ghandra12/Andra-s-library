@@ -65,8 +65,8 @@ namespace myLibrary.myLibraryClasses
                             book.IdBook = (int)reader[0];
                             book.Title = (string)reader[1];
                             book.Author = (string)reader[2];
-                            book.Type = (string)reader[3];
-                            book.Description = (string)reader[4];
+                            book.Description = (string)reader[3];
+                            book.Type = (string)reader[4];
                             book.Photo = LoadImage((byte[])reader[5]);
                             book.IdAccount = Convert.IsDBNull(reader[6]) ? null : (int?)reader[6];
                             book.Indisponibility = (bool)reader[7];
@@ -136,8 +136,8 @@ namespace myLibrary.myLibraryClasses
                             book.IdBook = (int)reader[0];
                             book.Title = (string)reader[1];
                             book.Author = (string)reader[2];
-                            book.Type = (string)reader[3];
-                            book.Description = (string)reader[4];
+                            book.Description = (string)reader[3];
+                            book.Type = (string)reader[4];
                             book.Photo = LoadImage((byte[])reader[5]);
                             book.IdAccount = Convert.IsDBNull(reader[6]) ? null : (int?)reader[6];
                             book.Indisponibility = (bool)reader[7];
